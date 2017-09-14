@@ -1,0 +1,11 @@
+sh %Q{ls -ltr}
+
+sh 'ls', 'file with spaces'
+
+# check exit status after command runs
+sh %Q{grep pattern file} do |ok, res|
+if ! ok
+puts "pattern not found (status = #{res.exitstatus})"
+end
+end
+
