@@ -1,0 +1,1 @@
+array_one   = %w'apple orange pear'            # => ["apple", "orange", "pear"]
