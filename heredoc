@@ -1,0 +1,5 @@
+lightdm_config = <<HEREDOC
+
+Hello World!
+
+HEREDOC
