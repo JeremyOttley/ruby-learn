@@ -1,0 +1,3 @@
+output = `command here` # gives you back full stdout
+
+stdout_and_stdin = IO.popen("command here")
