@@ -1,0 +1,12 @@
+%h1 Title of page
+
+:markdown
+  Do all the markdown you want here...
+
+  - list one
+  - list two
+
+   **My bold text**
+
+%p 
+  Now we are back to regular Haml
