@@ -1,0 +1,19 @@
+rake_task_default_do_all
+ 
+separate_each_programlink_into_own_task
+^this is so I can dynamically link them when changing a single element
+ 
+###
+ 
+FileUtils.ln_s "/home/$USER/.dots/.Xresources", "/home/$USER/.Xresources", force: true
+ 
+####
+ 
+ab_path = File.expand_path(File.dirname(__FILE__))
+ 
+###########
+ 
+top_dir = "/home/$USER/.dots/"
+ 
+if top_dir != File.expand_path(File.dirname(__FILE__))
+#replace this value
