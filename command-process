@@ -1,3 +1,7 @@
 output = `command here` # gives you back full stdout
 
-stdout_and_stdin = IO.popen("command here")
+# simple example with IO.popen
+stdout_and_stdin = IO.popen("ls -a") { |f| puts f.gets }
+
+# longer IO.popen
+stdout_and_stdin = IO.popen("path/to/long_script") { |f| puts f.gets }
