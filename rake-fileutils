@@ -1,3 +1,5 @@
+require 'rake'
+
 sh %Q{ls -ltr}
 
 sh 'ls', 'file with spaces'
