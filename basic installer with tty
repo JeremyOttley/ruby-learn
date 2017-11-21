@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'tty'
+
+prompt = TTY::Prompt.new
+
+result = prompt.collect do
+key(:editor).select("Choose an editor", %w[vim neovim emacs])
+key(:term).select("Choose a termianl", %w[konsole termite xterm])
+key(:image).select("Choose an image viewer", %w[nitrogen feh sxiv])
+key(:bar).select("Choose a bar", %w[lemonbar-xft-git polybar-git i3blocks])
+key(:finder).select("Choose a finder", %w[dmenu rofi-git j4-dmenu-desktop albert])
+key(:compositor).select("Choose a compositor", %w[xcompmgr compton-git compiz])
+key(:browser).select("Choose a browser", %w[qutebrowser-git firefox opera])
+end
+
+result.each_value { |value| `pacaur -S --noconfirm --noedit #{value}` }
