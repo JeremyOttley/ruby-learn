@@ -4,14 +4,23 @@ require 'tty'
 
 prompt = TTY::Prompt.new
 
+editors = %w[vim neovim emacs]
+terminals = %w[konsole termite xterm]
+images = %w[nitrogen feh sxiv]
+bars = %w[lemonbar-xft-git polybar-git i3blocks]
+finders = %w[dmenu rofi-git j4-dmenu-desktop albert]
+compositors = %w[xcompmgr compton-git compiz]
+browsers = %w[qutebrowser-git firefox opera]
+
 result = prompt.collect do
-key(:editor).select("Choose an editor", %w[vim neovim emacs])
-key(:term).select("Choose a termianl", %w[konsole termite xterm])
-key(:image).select("Choose an image viewer", %w[nitrogen feh sxiv])
-key(:bar).select("Choose a bar", %w[lemonbar-xft-git polybar-git i3blocks])
-key(:finder).select("Choose a finder", %w[dmenu rofi-git j4-dmenu-desktop albert])
-key(:compositor).select("Choose a compositor", %w[xcompmgr compton-git compiz])
-key(:browser).select("Choose a browser", %w[qutebrowser-git firefox opera])
+key(:editor).multi_select("Choose an editor", editors)
+key(:terminal).multi_select("Choose a termianl", terminals)
+key(:image).multi_select("Choose an image viewer", images)
+key(:bar).multi_select("Choose a bar", bars)
+key(:finder).multi_select("Choose a finder", finders)
+key(:compositor).multi_select("Choose a compositor", compositors)
+key(:browser).multi_select("Choose a browser", browsers)
 end
 
 result.each_value { |value| `pacaur -S --noconfirm --noedit #{value}` }
+#result.each_value { |value| puts value }
