@@ -1,0 +1,6 @@
+Alias_File = File.open(".bash_aliases")
+Alias_File.each_line { |line| puts line }
+
+OR (cleaner, smaller)
+
+IO.foreach(".bash_aliases") { |line| puts line }
