@@ -13,7 +13,7 @@ ab_path = File.expand_path(File.dirname(__FILE__))
  
 ###########
  
-top_dir = "/home/$USER/.dots/"
+top_dir = "#{Dir.home}/.dots/"
  
 if top_dir != File.expand_path(File.dirname(__FILE__))
 #replace this value
