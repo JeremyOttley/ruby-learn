@@ -5,11 +5,3 @@ OR (cleaner, smaller)
 
 IO.foreach(".bash_aliases") { |line| puts line }
 
-###################################
-##FINAL SOLUTION##
-
-#!/usr/bin/env ruby
-
-BASH_ALIASES = "#{Dir.home}/.bash_aliases"
-
-IO.foreach("#{BASH_ALIASES}") { |line| puts line }
