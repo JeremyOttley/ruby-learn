@@ -1,0 +1,10 @@
+class Array
+   def xcopy(dir2)
+      FileUtils.cp(self,dir2)
+      self.size
+   end
+end
+
+and then
+
+ Dir["*.rb"].xcopy("d:/save")
