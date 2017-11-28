@@ -1,0 +1,6 @@
+# take all the files in this directory, represent them as f, cp the full path to f including f to dir2
+Dir.glob("dir1/*") {|f| FileUtils.cp File.expand_path(f), "dir2" }
+
+OR
+
+FileUtils.cp Pathname.glob("dir1/*").select(&:file?), "dir2"
