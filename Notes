@@ -17,3 +17,27 @@ top_dir = "#{Dir.home}/.dots/"
  
 if top_dir != File.expand_path(File.dirname(__FILE__))
 #replace this value
+
+##
+
+use rtile.rb as a library for a window manager
+example: each command could be bound to a keypress through tty-key
+
+##
+
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+dir1 = ARGV[0]
+dir2 = ARGV[1]
+
+banner = <<-HEREDOC
+    Usage: scriptname dir1 dir2
+
+HEREDOC
+
+# if run with no arguments then;
+# puts banner
+# else;
+Dir.glob("#{dir1}/*") { |f| FileUtils.cp File.expand_path(f), "#{dir2}" }
