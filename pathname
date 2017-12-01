@@ -12,3 +12,7 @@
 To use it:
 
 require 'pathname'
+
+path = Pathname("/etc/hosts")
+
+File.open(path, "r") { |file| puts file.read }
