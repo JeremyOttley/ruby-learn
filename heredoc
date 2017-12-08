@@ -1,4 +1,4 @@
-lightdm_config = <<HEREDOC
+lightdm_config = lightconf <<HEREDOC
 
 Hello World!
 
