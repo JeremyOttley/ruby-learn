@@ -22,5 +22,5 @@ key(:compositor).multi_select("Choose a compositor", compositors)
 key(:browser).multi_select("Choose a browser", browsers)
 end
 
-result.each_value { |value| `pacaur -S --noconfirm --noedit #{value}` }
-#result.each_value { |value| puts value }
+result.each_value { |value| `pacaur -S --noconfirm --noedit #{value.chomp(",")}` }
+#result.each_value { |value| puts value.chomp(",") }
