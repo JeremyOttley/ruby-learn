@@ -1,7 +1,17 @@
-Alias_File = File.open(".bash_aliases")
+## The Ruby Way ##
+
+## VARS ##
+BASH_DIR = "#{Dir.home}/"
+
+# create a file object
+Alias_File = File.open("#{BASH_DIR}.bash_aliases")
+
+## MAIN ##
+
+# operate on the file object
 Alias_File.each_line { |line| puts line }
 
-OR (cleaner, smaller)
+### OR (cleaner, smaller, raw syscall) ###
 
-IO.foreach(".bash_aliases") { |line| puts line }
+# IO.foreach(".bash_aliases") { |line| puts line }
 
