@@ -2,6 +2,7 @@
 
 require 'tty'
 
+## VARS ##
 prompt = TTY::Prompt.new
 
 editors = %w[vim neovim emacs]
@@ -12,6 +13,12 @@ finders = %w[dmenu rofi-git j4-dmenu-desktop albert]
 compositors = %w[xcompmgr compton-git compiz]
 browsers = %w[qutebrowser-git firefox opera]
 
+## METHODS ##
+def install(package)
+  `pacaur -S --noconfirm --noedit #{package}`
+end
+
+## MAIN ##
 result = prompt.collect do
 key(:editor).multi_select("Choose an editor", editors)
 key(:terminal).multi_select("Choose a termianl", terminals)
@@ -22,5 +29,8 @@ key(:compositor).multi_select("Choose a compositor", compositors)
 key(:browser).multi_select("Choose a browser", browsers)
 end
 
-result.each_value { |value| `pacaur -S --noconfirm --noedit #{value.chomp(",")}` }
-#result.each_value { |value| puts value.chomp(",") }
+result.each_value do |value|
+  package = value.to_s.gsub(/[\[\]]/, "")
+  install(package)
+end
+
