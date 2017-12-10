@@ -1,10 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
 class Array
-   def xcopy(dir2)
-      FileUtils.cp(self,dir2)
-      self.size
-   end
+def xcopy(dir2)
+FileUtils.cp(self, dir2)
+self.size
+end
 end
 
-and then
+## Example ##
 
- Dir["*.rb"].xcopy("d:/save")
+Dir["*.rb"].xcopy("#{Dir.home}")
