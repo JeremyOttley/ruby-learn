@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'rake'
+
+task :default => 'blog.html'
+
+file 'blog.html' do
+File.open('blog.html', 'a+') do |f|
+html = <<-EOS
+<!DOCTYPE html>
+<head>
+<title>Rake Essentials</title>
+</head>
+<html>
+<body>
+<a href="#">Content</a>
+</body>
+</html>
+EOS
+f.write(html)
+end
+end
