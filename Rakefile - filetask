@@ -12,10 +12,158 @@ file 'blog.html' do
 File.open('blog.html', 'a+') do |f|
 html = <<-EOS
 <!DOCTYPE html>
-<head>
-<title>Rake Essentials</title>
-</head>
 <html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Hack Font-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack-extended.min.css">
+<!-- CSS -->
+<style>
+/* Mini Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* Post Reset */
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+@import "https://fonts.googleapis.com/css?family=Anonymous+Pro:400";
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body,
+html {
+  height: 100%;
+}
+body {
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+body {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+h1 { font-weight: 700; font-family: 'Anonymous Pro'; }
+h2 { font-weight: 600; font-family: 'Anonymous Pro'; }
+h3 { font-weight: 500; font-family: 'Anonymous Pro'; }
+p { font-weight: 400; }
+p.thin { font-weight: 200; }
+p.ultralight { font-weight: 100; }
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+a img {
+  border: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+.title {
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.container {
+  flex: 1;
+  padding: 30px;
+  box-shadow: 0 0 5px black;
+}
+.container-flex {
+  height: 100%;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+}
+section {
+  margin-bottom: 2em;
+}
+.heading {
+  /* font-family: "Playfair Display", serif; */
+  font-size: 10vw;
+  text-transform: capitalize;
+  margin-bottom: 0.5em;
+}
+
+.subheading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.code {
+  background-color: #F3F4F6;
+  padding: 1em 1em 1.2em;
+  border-radius: 0.25em;
+  font-family: "Hack", monospace;
+}
+@media screen and (min-width: 40em) {
+  body {
+    width: 70%;
+  }
+
+  .heading {
+    font-size: 6vw;
+  }
+
+  .subheading {
+    font-size: 1.25em;
+  }
+}
+
+/* fontawesome */
+[class*="fa-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+</style>
+</head>
 <body>
 <a href="#">Content</a>
 </body>
