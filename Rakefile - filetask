@@ -6,10 +6,10 @@ require 'rake'
 # ~/.rake/{clean.rake, blog.rake, system.rake}
 Dir.glob(".rake/**.rake").each { |f| import f }
 
-task :default => 'blog.html'
+task :default => 'index.html'
 
-file 'blog.html' do
-File.open('blog.html', 'a+') do |f|
+file 'index.html' do
+File.open('index.html', 'a+') do |f|
 html = <<-EOS
 <!DOCTYPE html>
 <html>
