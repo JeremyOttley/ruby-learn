@@ -4,7 +4,7 @@
 BASH_DIR = "#{Dir.home}/"
 
 # create a file object
-Alias_File = File.open("#{BASH_DIR}.bash_aliases")
+Alias_File = File.open("#{BASH_DIR}.bash_aliases", "r")
 
 ## MAIN ##
 
