@@ -4,3 +4,6 @@
 # is the ignore case necessary?
 hidden_files = /^.[[:alpha:]]*/i
 
+# alternate
+hidden_files = Regexp.new('^.[[:alpha:]]*')
+
