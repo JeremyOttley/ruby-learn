@@ -5,5 +5,5 @@
 hidden_files = /^.[[:alpha:]]*/i
 
 # alternate
-hidden_files = Regexp.new('^.[[:alpha:]]*')
+hidden_files = Regexp.new("^.[[:alpha:]]*", Regexp::IGNORECASE)
 
