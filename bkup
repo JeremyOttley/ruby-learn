@@ -1,0 +1,14 @@
+script to back up everything in home folder
+-remember hidden files
+
+hidden_files = Dir.glob["**/.*"]
+
+
+def report
+puts Dir.pwd
+end
+
+def go_home
+Dir.chdir("#{Dir.home}")
+report
+end
