@@ -1,0 +1,4 @@
+if ARGV.empty?
+  puts "No arguments given"
+  exit
+end
