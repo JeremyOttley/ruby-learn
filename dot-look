@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+
+dots = Dir.glob("**/.dots/*").grep(/[[:alpha:]]/i)
+
+dots.each { |f| puts File.basename(f) }
