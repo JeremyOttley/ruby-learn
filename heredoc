@@ -1,5 +1,11 @@
-lightdm_config = lightconf <<HEREDOC
+#!/usr/bin/env ruby
 
-Hello World!
+File.open(".bash_profile", "a+") do |f|
 
-HEREDOC
+BASH_PROFILE = <<EOF
+export EDITOR=micro
+EOF
+
+f.write(BASH_PROFILE)
+
+end
