@@ -11,6 +11,12 @@ Alias_File = File.open("#{BASH_DIR}.bash_aliases", "r")
 # operate on the file object
 Alias_File.each_line { |line| puts line }
 
+## OR (more simple/scripty)
+
+File.open("#{Dir.home}/.bashrc", "r").grep(/^alias/) do |f|
+puts f
+end
+
 ### OR (cleaner, smaller, raw syscall) ###
 
 # IO.foreach(".bash_aliases") { |line| puts line }
