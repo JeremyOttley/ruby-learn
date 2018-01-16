@@ -1,0 +1,2 @@
+# get the owner of the current shell session and assign it to the constant.
+USER_NAME = `whoami`.chomp
