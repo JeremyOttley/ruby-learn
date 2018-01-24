@@ -32,7 +32,7 @@ end
 
 ## MAIN ##
 # does this check work?
-puts banner unless ARGV[1].empty? != false
+puts banner unless ARGV[1].empty?
 Dir.glob("#{dir1}/*") { |f| FileUtils.cp File.expand_path(f), "#{dir2}" }
 
 ####
