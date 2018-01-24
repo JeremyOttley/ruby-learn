@@ -3,7 +3,6 @@
 require 'fileutils'
 
 filename = ARGV[0]
-language = ARGV[1]
 
 File.open("#{filename}.rb", "a+") do |f|
 script = <<-EOS
@@ -13,4 +12,5 @@ script = <<-EOS
 EOS
 f.write(script)
 # FileUtils.chmod "#{filename}.rb", "0755", :verbose => true 
+# ENV['editor'] "#{filename}.rb"
 end
