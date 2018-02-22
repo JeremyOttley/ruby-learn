@@ -1,0 +1,18 @@
+# zip method merges two arrays (and can be chained with other enumerables)
+
+
+a = [1,2,3,4,5]
+b = [1,2,3,6,8]
+ 
+c = a.zip(b)
+ 
+# [[1, 1], [2, 2], [3, 3], [4, 6], [5, 8]]
+
+
+# chained with other enumerables
+a = %w(bacon coconut walnuts)
+b = [100, 200, 300]
+ 
+a.zip(b).to_h
+ 
+# {"bacon"=>100, "coconut"=>200, "walnuts"=>300}
