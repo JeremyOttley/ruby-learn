@@ -17,16 +17,10 @@ If you have to use one of these methods you can work on a duplicate object.
 
 Given a string & a clone of that string:
 
-1
-2
 str = "abcd"
 dup = str.dup
 We get these results when we clear the duplicated string:
 
-1
-2
-3
-4
 dup.clear
  
 # str => "abcd"
