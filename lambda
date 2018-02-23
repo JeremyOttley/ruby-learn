@@ -1,0 +1,17 @@
+apps = %w[
+  zathura
+  zathura-cb
+  zathura-ps
+  zathura-djvu
+  zathura-pdf-mupdf
+  ]
+
+printer = ->value{ puts value }
+
+apps.each &printer == apps.each { |v| puts v }
+
+## ## ##
+
+installer = ->value{ `trizen -Syu --noconfirm #{value}` }
+
+apps.each &installer
