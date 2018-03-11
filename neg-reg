@@ -1,0 +1,2 @@
+# Negation of a regex pattern
+match_anything_but = /(?!pattern)/
