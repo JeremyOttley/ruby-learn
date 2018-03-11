@@ -1,0 +1,2 @@
+status = system("git clone https://github.com/#{GIT_USER}/#{DOT_REPO}")
+puts status ? "Success" : "Failed"
