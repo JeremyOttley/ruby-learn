@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+#https://github.com/javan/whenever
+#schedule.rb
+
+require 'whenever'
+
+every 00   13   *   *   *  do
+command ". /etc/profile && (echo; date; pacman -Syuq --noconfirm) &>>$LOGFILE || (echo 'pacman failed!'; tail $LOGFILE; false)"
+end
