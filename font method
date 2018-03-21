@@ -1,6 +1,6 @@
 def refresh_fonts
 #check if "$HOME/.fonts" directory exists; then
-unless File.directory?("#{Dir.home}/.fonts") == true
+unless File.directory?("#{Dir.home}/.fonts")
 FileUtils.mkdir("#{Dir.home}/.fonts")
 system("mkfontdir ~/.fonts")
 system("mkfontscale ~/.fonts")
