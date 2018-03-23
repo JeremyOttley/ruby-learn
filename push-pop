@@ -1,0 +1,6 @@
+require 'shell'
+
+shell = Shell.new
+
+shell.pushd '/tmp'
+shell.popd
