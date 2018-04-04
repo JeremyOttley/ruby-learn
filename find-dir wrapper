@@ -1,0 +1,4 @@
+# returns true or false
+def directory_exists?(directory)
+  Dir.exist?(File.expand_path(directory))
+end
