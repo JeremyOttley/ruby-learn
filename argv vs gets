@@ -1,0 +1,8 @@
+name = ARGV
+first, second, third = $stdin.gets.chomp
+
+puts "#{name}, your first variable is: #{first}"
+puts "#{name}, your second variable is: #{second}"
+puts "#{name}, your third variable is: #{third}"
+
+# ARGV is called before gets.chomp
