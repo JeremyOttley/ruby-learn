@@ -6,3 +6,5 @@ puts "#{name}, your second variable is: #{second}"
 puts "#{name}, your third variable is: #{third}"
 
 # ARGV is called before gets.chomp
+# ARGV is for commandline arguments
+# gets is for user input while the script is running
