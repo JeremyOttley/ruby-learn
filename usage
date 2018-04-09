@@ -1,0 +1,10 @@
+def usage
+puts "-f, --force "describe force""
+puts "-o, --open "describe open""
+puts "-p, --port "describe port""
+end
+
+unless ARGV.size > 1
+  puts usage
+  exit
+end
