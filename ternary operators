@@ -1,3 +1,8 @@
 puts (if 1 then 2 else 3 end) # => 2
 
 puts 1 ? 2 : 3                # => 2
+
+## ternary in action ##
+
+status = system("touch bin/styles.scss")
+puts status ? "Success" : "Failed"
