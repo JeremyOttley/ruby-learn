@@ -1,0 +1,5 @@
+h = { bacon: 30, chocolate: 50, orange: 60 }
+
+h.values #=> [30, 50, 60]
+
+The values method transforms the values of a hash to an array of those values
