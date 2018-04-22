@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+require 'tty-config'
+
+##=CONFIGURATION=##
+
+# config object
+config = TTY::Config.new
+
+# config title
+config.filename = 'config'
+
+# config file type
+config.extname = '.toml'
+
+# config location
+config.append_path Dir.pwd
+
+# read the config file
+config.read
+
+# prompt user to create config if 'config.persisted?' does not return true
+puts "Please create config" unless config.persisted?
+
+user_name = config.fetch('owner.name')
+item = config.fetch('servers.beta.country')
+puts "#{user_name} wants to purchase #{item}"
+################################################################################
+
+# This file works with the config.toml included in this repository
