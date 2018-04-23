@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'dotenv'
+
+# search for the .env file in PWD
+Dotenv.load
