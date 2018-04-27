@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+class Warrior
+
+#attr_accessor :name :race :strength :dexterity
+
+def initialize(name,clan,strength,dexterity)
+@name = name
+@clan = clan
+@strength = strength
+@dexterity = dexterity
+end
+
+def about
+puts "#{@name} is a warrior from the #{@clan} clan with a strength of #{@strength} and a dexterity of #{@dexterity}"
+end
+
+$warrior_info = puts "A fighter. A warrior has higher than normal strength. They never back down or surrender!"
+
+end
+
+player_1 = Warrior.new("Mike", "White Fox", 24, 16)
+player_2 = Warrior.new("Larry", "Bear", 29, 20)
+
+## MAIN ##
+
+player_1.about
+player_2.about
+$warrior_info
