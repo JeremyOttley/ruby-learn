@@ -4,3 +4,8 @@ require 'dotenv'
 
 # search for the .env file in PWD
 Dotenv.load
+
+# examples (add "export" to be able to source in bash)
+#S3_BUCKET=YOURS3BUCKET
+#SECRET_KEY=YOURSECRETKEYGOESHERE
+#DATABASE_URL="postgres://$(whoami)@localhost/my_database"
