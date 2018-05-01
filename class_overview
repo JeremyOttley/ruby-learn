@@ -1,0 +1,38 @@
+class Person
+
+  attr_accessor :fname, :mname, :lname
+  attr_accessor :dob, :fav_color, :pet
+  attr_accessor :hair_color, :eye_color, :skin_color
+  # etc.
+
+  # Explicit
+  def initialize(fname, mname, lname, dob, fav_color, pet, hair_color, eye_color, skin_color)
+    @fname = fname
+    @mname = mname
+    # etc.
+  end
+  
+  # Mapped, can't have both this *and* explicit initializer.
+  def initialize(params = {})
+    @fname = params[:fname] || ''
+    @lname = params[:lname] || ''
+    # etc.
+  end
+end
+
+ # Explicit, un-named parameters.
+# * Can use defaults.
+# * Must remember parameter order.
+p = Person.new('Jimmy', 'Dean', 'Sausage', Date.now, 'blue', 'Spot', ...)
+
+# Mapped
+# * Initializer can set defaults in the method
+# * Or can iterate, like ActiveRecord does
+p = Person.new(fname: 'Jimmy',
+               mname: 'Dean',
+               lname: 'Sausage',
+               dob: Date.now,
+               # etc, but can 
+              )
+
+# Named parameters are similar to Mapped, but with positional caveats.
