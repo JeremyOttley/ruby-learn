@@ -3,36 +3,35 @@ class Person
   attr_accessor :fname, :mname, :lname
   attr_accessor :dob, :fav_color, :pet
   attr_accessor :hair_color, :eye_color, :skin_color
-  # etc.
 
-  # Explicit
-  def initialize(fname, mname, lname, dob, fav_color, pet, hair_color, eye_color, skin_color)
-    @fname = fname
-    @mname = mname
-    # etc.
-  end
-  
-  # Mapped, can't have both this *and* explicit initializer.
-  def initialize(params = {})
+# Mapped initializer
+def initialize(params = {})
     @fname = params[:fname] || ''
+    @mname = params[:mname] || ''
     @lname = params[:lname] || ''
-    # etc.
+    @dob = params[:dob] || ''
+    @fav_color = params[:fav_color] || ''
+    @pet = params[:pet] || ''
+    @hair_color = params[:hair_color] || ''
+    @eye_color = params[:eye_color] || ''
+    @skin_color = params[:skin_color] || ''
+    end
+
   end
-end
 
- # Explicit, un-named parameters.
-# * Can use defaults.
-# * Must remember parameter order.
-p = Person.new('Jimmy', 'Dean', 'Sausage', Date.now, 'blue', 'Spot', ...)
-
-# Mapped
-# * Initializer can set defaults in the method
-# * Or can iterate, like ActiveRecord does
-p = Person.new(fname: 'Jimmy',
-               mname: 'Dean',
-               lname: 'Sausage',
-               dob: Date.now,
-               # etc, but can 
+p = Person.new(fname: 'Jeremy',
+               mname: 'Mark',
+               lname: 'Ottley',
+               dob: 1988,
+               fav_color: 'Black',
+               pet: 'Misty',
+               hair_color: 'Black',
+               eye_color: 'Brown',
+               skin_color: 'Brown'
               )
 
-# Named parameters are similar to Mapped, but with positional caveats.
+# Consider replacing the call to reject simple with compact: ARRAY.compact.join(' ')
+# compact would remove elements that are nil while leaving empty strings
+puts "Hello, and welcome. We have a new employee joining us today named #{[p.fname, p.mname, p.lname].reject(&:empty?).join(' ')}. Born in #{p.dob}, #{p.fname} will be our youngest team member. While his favorite color is #{p.fav_color}, Mr. #{p.lname} has an adorable cat named #{p.pet}. #{p.fname}'s hair is #{p.hair_color}, and his eyes are #{p.eye_color}, which match his #{p.skin_color} skin."
+
+#puts "Hello, and welcome. We have a new employee joining us today named #{[p.fname, p.mname, p.lname].compact.join(' ')}.
