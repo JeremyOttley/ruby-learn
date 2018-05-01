@@ -1,29 +1,55 @@
 #!/usr/bin/env ruby
 
+## CONFIG ##
+require 'tty-config'
+
+config = TTY::Config.new
+config.filename = 'character'
+config.extname = '.toml'
+config.append_path Dir.pwd
+config.read
+puts "Please create config" unless config.persisted?
+
+## CLASSES ##
+
 class Warrior
 
-#attr_accessor :name :race :strength :dexterity
+ attr_accessor :name, :clan, :strength, :dexterity
 
-def initialize(name,clan,strength,dexterity)
-@name = name
-@clan = clan
-@strength = strength
-@dexterity = dexterity
+# Mapped initializer
+def initialize(params = {})
+    @fname = params[:fname] || ''
+    @mname = params[:mname] || ''
+    @lname = params[:lname] || ''
+    @dob = params[:dob] || ''
+    @fav_color = params[:fav_color] || ''
+    @pet = params[:pet] || ''
+    @hair_color = params[:hair_color] || ''
+    @eye_color = params[:eye_color] || ''
+    @skin_color = params[:skin_color] || ''
+    end
+
+def initialize(params = {})
+@name = params[:name] || ''
+@clan = params[:clan] || ''
+@strength = params[:strength] || ''
+@dexterity = params[:dexterity] || ''
 end
 
 def about
 puts "#{@name} is a warrior from the #{@clan} clan with a strength of #{@strength} and a dexterity of #{@dexterity}"
 end
 
-$warrior_info = puts "A fighter. A warrior has higher than normal strength. They never back down or surrender!"
-
 end
 
-player_1 = Warrior.new("Mike", "White Fox", 24, 16)
-player_2 = Warrior.new("Larry", "Bear", 29, 20)
+## MAIN ##
+
+player_1 = Warrior.new(name: "#{config.fetch('warrior.player_1.name')}",
+               clan: "#{config.fetch('warrior.player_1.clan')}",
+               strength: config.fetch('warrior.player_1.strength'),
+               dexterity: config.fetch('warrior.player_1.dexterity'),
+              )
 
 ## MAIN ##
 
 player_1.about
-player_2.about
-$warrior_info
