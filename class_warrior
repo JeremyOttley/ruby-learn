@@ -14,37 +14,38 @@ puts "Please create config" unless config.persisted?
 
 class Warrior
 
- attr_accessor :name, :clan, :strength, :dexterity
+attr_accessor :name, :clan, :strength, :dexterity
 
 # Mapped initializer
 def initialize(params = {})
-    @fname = params[:fname] || ''
-    @mname = params[:mname] || ''
-    @lname = params[:lname] || ''
-    @dob = params[:dob] || ''
-    @fav_color = params[:fav_color] || ''
-    @pet = params[:pet] || ''
-    @hair_color = params[:hair_color] || ''
-    @eye_color = params[:eye_color] || ''
-    @skin_color = params[:skin_color] || ''
-    end
+  @fname = params[:fname] || ''
+  @mname = params[:mname] || ''
+  @lname = params[:lname] || ''
+  @dob = params[:dob] || ''
+  @fav_color = params[:fav_color] || ''
+  @pet = params[:pet] || ''
+  @hair_color = params[:hair_color] || ''
+  @eye_color = params[:eye_color] || ''
+  @skin_color = params[:skin_color] || ''
+end
 
 def initialize(params = {})
-@name = params[:name] || ''
-@clan = params[:clan] || ''
-@strength = params[:strength] || ''
-@dexterity = params[:dexterity] || ''
+  @name = params[:name] || ''
+  @clan = params[:clan] || ''
+  @strength = params[:strength] || ''
+  @dexterity = params[:dexterity] || ''
 end
 
 def about
-puts "#{@name} is a warrior from the #{@clan} clan with a strength of #{@strength} and a dexterity of #{@dexterity}"
+  puts "#{@name} is a warrior from the #{@clan} clan with a strength of #{@strength} and a dexterity of #{@dexterity}"
 end
 
 end
 
 ## MAIN ##
 
-player_1 = Warrior.new(name: "#{config.fetch('warrior.player_1.name')}",
+player_1 = Warrior.new(
+               name: "#{config.fetch('warrior.player_1.name')}",
                clan: "#{config.fetch('warrior.player_1.clan')}",
                strength: config.fetch('warrior.player_1.strength'),
                dexterity: config.fetch('warrior.player_1.dexterity'),
