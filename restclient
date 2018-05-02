@@ -1,0 +1,6 @@
+require 'restclient'
+
+File.open("guide.txt", "a+") do |f|
+    data = RestClient.get("www.rubyguides.com")
+    f.write(data)
+end
