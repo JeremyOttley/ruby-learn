@@ -1,0 +1,5 @@
+require 'httparty'
+
+response = HTTParty.get('https://developer.mozilla.org/en-US/docs/Web/HTTP')
+
+puts response.body
