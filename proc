@@ -1,0 +1,37 @@
+#
+# Not saying it's a good idea, but it's interesting.
+#
+
+# A Proc is just something you can call, with arguments.
+
+p = Proc.new { |wat| puts wat }
+p.call "ohai"
+# => "ohai"
+
+# The argument to Hash.new is what's returned if a key isn't found.
+# This will return a callable proc that returns the string "Menu.last".
+menus = Hash.new(Proc.new { |p| "Menu.last" })
+
+# The "items" and "categories" controllers behave the same way.
+# This Proc uses its parameter, the params hash.
+itemcats = Proc.new { |p| "Menu.find(#{p[:menu_id]})" }
+menus["items"] = menus["categories"] = itemcats
+
+# This returns a callable proc that checks for the :id key in the hash.
+menus["menus"] = Proc.new { |p| p[:id] ? "Menu.find(#{p[:id]})" : "Menu.first" }
+
+# Should get the default.
+puts menus["bogus_controller"]
+
+# Need a menu_id. Although you should decide what to do if there isn't one.
+params = { :menu_id => 42 }
+puts menus["items"].call(params)
+puts menus["categories"].call(params)
+
+# The "menus" controller has two paths, if there's an id...
+params = { :id => 69 }
+puts menus["menus"].call(params)
+
+#... and if there isn't.
+params = {}
+puts menus["menus"].call(params)
