@@ -1,0 +1,7 @@
+require 'active_support/core_ext/hash/conversions'
+require 'yaml'
+
+file = File.open("lain.xml", "r")
+hash = Hash.from_xml(file.read)
+yaml = hash.to_yaml
+File.open("lain.yml", "w") { |file| file.write(yaml) }
