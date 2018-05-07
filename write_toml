@@ -1,0 +1,20 @@
+require 'toml'
+
+hash = {
+  "integer" => 1,
+  "float" => 3.14159,
+  "true" => true,
+  "false" => false,
+  "string" => "hi",
+  "array" => [[1], [2], [3]],
+  "key" => {
+    "group" => {
+      "value" => "lol"
+    }
+  }
+}
+doc = TOML::Generator.new(hash).body
+
+File.open("test.toml", "a+") do |f|
+f.write(doc)
+end
