@@ -1,0 +1,23 @@
+#Indent: The default indentation to use when emitting (defaults to 2)
+#Separator: The default separator to use between documents (defaults to '---')
+#SortKeys: Sort Hash keys when emitting? (defaults to false) 
+#UseHeader: Display the YAML header when emitting? (defaults to false)
+#UseVersion: Display the YAML version when emitting? (defaults to false)
+#AnchorFormat: A formatting string for anchor IDs when emitting (defaults to 'id%03d')
+#ExplicitTypes: Use explicit types when emitting? (defaults to false)
+#BestWidth: The character width to use when folding text (defaults to 80)
+#UseFold: Force folding of text when emitting? (defaults to false)
+#UseBlock: Force all text to be literal when emitting? (defaults to false)
+#Encoding: Unicode format to encode with (defaults to :Utf8; requires Iconv)
+
+        def to_yaml( opts = {} )
+        end
+        
+        ################################
+        
+puts [[ 'Crispin', 'Glover' ]].to_yaml( :Indent => 4, :UseHeader => true, :UseVersion => true )
+# prints:
+#   --- %YAML:1.0
+#   -
+#       - Crispin
+#       - Glover
