@@ -1,0 +1,7 @@
+require 'yaml'
+configuration = { 'color' => 'blue',
+                  'font' => 'new romain',
+                  'font-size'  => 7 }
+open('text.cfg', 'w') { |f| YAML.dump(configuration, f) }
+
+open('text.cfg') { |f| YAML.load(f) }
