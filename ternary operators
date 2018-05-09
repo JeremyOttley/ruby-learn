@@ -8,3 +8,11 @@ if_this_is_a_true_value ? then_the_result_is_this : else_it_is_this
 
 status = system("touch bin/styles.scss")
 puts status ? "Success" : "Failed"
+
+## OR ##
+
+def cmd(user_input)
+status = system("#{user_input}")
+puts status ? "Success" : "Failed"
+#return status ? "Success" : "Failed"
+end
