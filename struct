@@ -1,0 +1,10 @@
+class Person
+  attr_accessor :name, :birthday
+
+  Birthday = Struct.new(:day, :month, :year)
+
+  def initialize(opts = {})
+    @name = opts[:name]
+    @birthday = Birthday.new(opts[:day], opts[:month], opts[:year])
+  end
+end
