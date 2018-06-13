@@ -1,0 +1,12 @@
+# Read config
+configdata = ''
+File.open("#{Dir.home}/.config/settings.json") do |file|
+    file.each do |line|
+        configdata << line
+    end
+end
+
+# Parse config
+config  = {}
+config  = JSON.parse(configdata)
+@config = config
