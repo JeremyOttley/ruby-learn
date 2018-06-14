@@ -13,6 +13,12 @@ print %Q[
   ∩＾_＾)⊃━☆ﾟ.*・｡ﾟ
 ]
   end
+  
+  def squee
+puts %Q{
+░ ∗ ◕ ں ◕ ∗ ░
+}
+end
 
 end
 
@@ -24,6 +30,6 @@ help = Show_Help.new
 
 help.music
 help.wizard
-
+help.squee
 
 
