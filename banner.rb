@@ -1,20 +1,20 @@
 #!/usr/bin/env ruby
 
-module Banner
+class ShowHelp
 
-def music
+def self.music
 print %Q{
 (づ｡◕‿‿◕｡)づ 󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠​​​​​​​​​​♬♩♪·♫ 󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠​​​​​​​​​​♬♩♪·♫
 }
 end
 
-  def wizard
+  def self.wizard
 print %Q[
   ∩＾_＾)⊃━☆ﾟ.*・｡ﾟ
 ]
   end
   
-  def squee
+  def self.squee
 puts %Q{
 ░ ∗ ◕ ں ◕ ∗ ░
 }
@@ -22,14 +22,11 @@ end
 
 end
 
-class Show_Help
-   include Banner
-end
+ShowHelp::music
+ShowHelp::wizard
+ShowHelp::squee
 
-help = Show_Help.new
 
-help.music
-help.wizard
-help.squee
+
 
 
