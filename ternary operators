@@ -16,3 +16,8 @@ status = system("#{user_input}")
 puts status ? "Success" : "Failed"
 #return status ? "Success" : "Failed"
 end
+
+####
+
+# If x == 10 returns "true" then put string "x is ten" ELSE put string "x is not ten"
+puts x == 10 ? "x is ten" : "x is not ten"
