@@ -1,0 +1,7 @@
+class Point
+  def initialize(x: , y:)
+    @x, @y = x, y
+  end
+end
+ 
+point = Point.new(x: 10, y: 20)
