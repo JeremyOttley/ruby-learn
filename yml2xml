@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'active_support'
+require 'active_support/core_ext'
+require 'yaml'
+
+yaml_data = YAML.load_file("rc.yml")
+
+print yaml_data.to_xml
