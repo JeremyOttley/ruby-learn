@@ -1,0 +1,8 @@
+def remove(array, item)
+  array.reject! { |v| v == item }
+end
+array = [1,2,3]
+remove(array, 1)
+# => [2, 3]
+array
+# => [2, 3]
