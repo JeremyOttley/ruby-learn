@@ -1,0 +1,40 @@
+class Runner
+  YAML.mapping(
+    name: {type: String},
+    setup: {type: Array(String), default: [] of String},
+    run: {type: String},
+  )
+end
+
+# This controls the per-project configuration for btest
+class Config
+  YAML.mapping(
+    suite_extension: {type: String, default: ".yaml"},
+    test_path: {type: String, default: "tests"},
+    work_path: {type: String, default: ".btest"},
+    runners: {type: Array(Runner), default: [] of Runner},
+  )
+
+  def runner(name)
+    @runners.each do |r|
+      return r if r.name == name
+    end
+
+    raise Exception.new("Runner #{name} not found")
+  end
+end
+
+#
+
+config = Config.from_yaml(File.read(CONFIG_FN))
+
+#
+
+begin
+      File.open(path) do |f|
+        file = YAML.parse(f)
+      end
+    rescue ex
+      puts "Error parsing YAML file: #{path}"
+      raise ex
+    end
