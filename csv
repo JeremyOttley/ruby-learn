@@ -1,0 +1,8 @@
+require 'csv'
+
+print 'Enter a csv file to print: '
+filename = gets.chomp
+
+CSV.open(filename, 'f') do |data|
+p data
+end
