@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+
+def banner
+  print "\n"
+  puts "Config file created!"
+  puts "===================="
+  print %Q[
+    ∩＾_＾)⊃━☆ﾟ.*・｡ﾟ
+  ]
+  print "\n"
+end
+
+configuration = {
+  'color' => 'blue',
+  'font' => 'new roman',
+  'font-size' => 7
+}
+
+if File.exist?('text.cfg')
+  puts "Config already exists"
+else
+  open('text.cfg', 'w') { |f| YAML.dump(configuration, f) } unless File.exist?('text.cfg')
+  banner
+end
