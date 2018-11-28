@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+data = File.read("hello.txt") 
+
+filtered_data = data.gsub!("install", "latest") 
+
+File.open("hello.txt", "w") do |f|
+  f.write(filtered_data)
+endd
