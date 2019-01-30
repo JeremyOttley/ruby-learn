@@ -1,0 +1,7 @@
+str = "Jeremy Mark Ottley"
+
+/(?<last_name>\w[t]{2}\w*)/.match(str)[:last_name] => "Ottley"
+
+# OR:
+
+/(?<last_name>\w[t]{2}\w*)/.match(str)[1] => "Ottley"
