@@ -1,3 +1,3 @@
 require 'kramdown'
 
-Kramdown::Document.new(File.read("doc.md"), smart_quotes: %w[apos apos quot quot]]).to_html
+Kramdown::Document.new(File.read("doc.md"), smart_quotes: %w[apos apos quot quot]).to_html
