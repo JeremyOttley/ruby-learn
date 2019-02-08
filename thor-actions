@@ -1,0 +1,15 @@
+require 'thor'
+
+class Deploy_Dotfiles < Thor
+  include Thor::Actions
+  desc "create DOTFILE", "Create dotfiles on the fly"
+  
+  def touch(file)
+    create_file ".xsession" do
+      editor = ask("What editor do you use?")
+      "export EDITOR=#{editor}"
+  end
+end
+end
+
+Deploy_Dotfiles.start(ARGV)
