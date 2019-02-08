@@ -6,4 +6,4 @@ filtered_data = data.gsub!("install", "latest")
 
 File.open("hello.txt", "w") do |f|
   f.write(filtered_data)
-endd
+end
