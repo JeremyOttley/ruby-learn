@@ -1,5 +1,3 @@
 #!/usr/bin/env ruby
 
-#require 'rake'
-
-TOPDIR = "File.expand_path(File.join(File.dirname(__FILE__), ".."))"
+TOPDIR = File.expand_path(File.join(File.dirname(__FILE__), ".."))
