@@ -13,3 +13,22 @@ end
 end
 
 Deploy_Dotfiles.start(ARGV)
+
+##
+
+require 'thor'
+
+class CLI < Thor
+  include Thor::Actions
+  desc "copy FILE", "Make FILE appear in desired folder"
+
+  def self.source_root
+    File.dirname(__FILE__)
+  end
+
+  def init_all
+    copy_file "init.org", "test_dir/init.org"
+  end
+end
+
+CLI.start(ARGV)
