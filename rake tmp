@@ -3,4 +3,4 @@
 #   cp 'one_file', 'destination'
 #   cp 'another_file', 'destination', :verbose => true
 # end
-directory '/tmp' # creates a directory task named '/tmp' which will create the '/tmp' directory if it doesn't alrady exist
+directory '/tmp' # creates a directory task named '/tmp' which will create the '/tmp' directory if it doesn't already exist
