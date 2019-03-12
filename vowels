@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+## Count Vowels:
+# Enter a string and the program counts the number of vowels in the text. For added complexity have it report a sum of each vowel found.
+
+print "Please give me a string: "
+
+str = gets.chomp
+
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+letters = str.downcase.chars
+
+vowels_in_string = (letters & vowels)
+
+number_of_vowels_in_string = (letters & vowels).length
+
+puts "The string #{str} has #{number_of_vowels_in_string} vowels. Here are the vowels: #{vowels_in_string[0]}"
