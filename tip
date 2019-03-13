@@ -1,0 +1,30 @@
+## Tip Calculator
+
+require 'pp'
+
+def tip
+options = <<-EOF
+A. 15%
+B. 20%
+C. 25%
+EOF
+
+puts options
+pp "How much do you want to tip?"
+tip_option = gets.chomp
+pp "How much is your bill?"
+bill = gets.chomp.to_f
+
+case tip_option
+when "A", "a"
+  pp "$#{0.15 * bill}"
+when "B", "b"
+  pp "$#{0.2 * bill}"
+when "C", "c"
+  pp "${0.25 * bill}"
+else
+  pp "Please enter a valid option"
+end
+end
+
+tip
