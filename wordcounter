@@ -1,0 +1,12 @@
+puts "Enter file: "
+user_input = gets.chomp
+
+file = File.open(user_input, "r")
+
+lines = file.readlines
+
+number_of_lines = lines.map { |l| l.scan(/\w+/).length }
+
+total_number_of_lines = number_of_lines.reduce(:+) # reduce the contents of the array with the operation "+" (it must be a symbol)
+
+puts total_number_of_lines
