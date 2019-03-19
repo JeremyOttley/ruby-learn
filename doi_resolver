@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+# NEXT STEP IS TO HAVE IT ITERATE THROUGH ALL FILES IN A GIVEN DIRECTORY
+# THEN WRITE ALL THE CORRECT DOIS TO A NEW FILE CALLED <CORRECTED_DOIS.TXT>
+#this is where rake comes in
+
+require 'rake'
+
+files = Rake::FileList["*.xml"]
+
+task :correct do
+files.each do |xml_file|
+
+  incorrect_doi = %r{\w{3}:\d+\.\d+\/\d+?\w\.\d+\.\d+}
+  doi = text.each_line.map do |line| line.scan(incorrect_doi)
+  text = File.read(xml_file)
+  captures = %r{(?<doi_prefix>\d+\.\d+\/)(?<doi_suffix>\d+?\w\.\d+\.\d+)}
+  url = captures.match(doi)
+  correct_doi = "http://doi.org/" + url[:doi_prefix] + url[:doi_suffix]
+  replace = text.gsub(incorrect_doi, correct_doi)
+
+  File.open(xml_file, "w") do |file|
+    file.puts correct_doi
+  end
+end
+
+end
