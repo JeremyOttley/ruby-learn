@@ -1,0 +1,6 @@
+filepath = "hello.txt"
+
+IO.write(filepath, File.open(filepath) { |f|
+  f.read.gsub(/aaa/, "bbb")
+}
+)
