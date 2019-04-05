@@ -1,0 +1,22 @@
+##: Site Checker with Time Scheduling - An application that attempts to connect to a website or server every so many minutes or a given time and check if it is up. 
+# If it is down, it will notify you by email or by posting a notice on screen.
+
+require "net/http"
+require 'open-uri'
+
+
+# Display status message
+def status(message)
+  puts('[' + Time.now.strftime('%X') + '] ' + message)
+end
+
+
+uri = URI.parse("http://danieldociu.weebly.com/")
+response = Net::HTTP.get_response(uri)
+code = response.code
+
+  if code == '200'
+    status("Website is up!")
+  else
+    status("Something funny is going on!")
+  end
