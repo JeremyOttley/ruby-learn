@@ -30,7 +30,7 @@ PISCES_DAILY = PISCES_URI.css("p")
 SCORPIO_DAILY = SCORPIO_URI.css("p")
 
 class MyCLI < Thor
-  desc "fortune SIGN", "Fetch daily"
+  desc "fortune SIGN", "Fetch daily horoscope for SIGN"
   def fortune(sign)
     case sign
       when /scorpio/i
@@ -61,4 +61,4 @@ class MyCLI < Thor
   end
 end
 
-MyCLI.start(ARGV)
+MyCLI.start(ARGV) #=> ./fortune.thor fortune SIGN
