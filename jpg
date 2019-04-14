@@ -1,0 +1,7 @@
+require "open-uri"
+
+open("your-url") {|f|
+   File.open("whatever_file.jpg","wb") do |file|
+     IO.copy_stream(f, file)
+   end
+}
