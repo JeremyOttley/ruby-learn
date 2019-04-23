@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'thor'
-require 'pp'
 
 SCORPIO_URI = Nokogiri::HTML(open("https://www.astrology.com/horoscope/daily/SCORPIO.html"))
 ARIES_URI = Nokogiri::HTML(open("https://www.astrology.com/horoscope/daily/ARIES.html"))
@@ -34,29 +33,29 @@ class MyCLI < Thor
   def fortune(sign)
     case sign
       when /scorpio/i
-        pp SCORPIO_DAILY[0].text.strip
+        say SCORPIO_DAILY[0].text.strip
       when /aries/i
-        pp ARIES_DAILY[0].text.strip
+        say ARIES_DAILY[0].text.strip
       when /taurus/i
-        pp TAURUS_DAILY[0].text.strip
+        say TAURUS_DAILY[0].text.strip
       when /gemini/i
-        pp GEMINI_DAILY[0].text.strip
+        say GEMINI_DAILY[0].text.strip
       when /cancer/i
-        pp CANCER_DAILY[0].text.strip
+        say CANCER_DAILY[0].text.strip
       when /leo/i
-        pp LEO_DAILY[0].text.strip
+        say LEO_DAILY[0].text.strip
       when /virgo/i
-        pp VIRGO_DAILY[0].text.strip
+        say VIRGO_DAILY[0].text.strip
       when /libra/i
-        pp LIBRA_DAILY[0].text.strip
+        say LIBRA_DAILY[0].text.strip
       when /sagittarius/i
-        pp SAGITTARIUS_DAILY[0].text.strip
+        say SAGITTARIUS_DAILY[0].text.strip
       when /capricorn/i
-        pp CAPRICORN_DAILY[0].text.strip
+        say CAPRICORN_DAILY[0].text.strip
       when /aquarius/i
-        pp AQUARIUS_DAILY[0].text.strip
+        say AQUARIUS_DAILY[0].text.strip
       when /pisces/i
-        pp PISCES_DAILY[0].text.strip
+        say PISCES_DAILY[0].text.strip
       end
   end
 end
