@@ -1,0 +1,12 @@
+require 'json'
+require 'pp'
+
+# Read JSON from a file, iterate over objects
+file = open("shops.json")
+json = file.read
+
+parsed = JSON.parse(json)
+
+parsed["shop"].each do |shop|
+  p shop["id"]
+end
