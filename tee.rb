@@ -1,6 +1,6 @@
 # doesn't break
 File.open(ARGV[0], 'w') do |file|
-  ARGV.clear # ARGF will always read from ARGV first, so it must be cleared
+  ARGV.clear # ARGF will always read from ARGV first, so it must be cleared before using ARGF.each
 
   ARGF.each do |line|
     puts line
