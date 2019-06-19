@@ -1,0 +1,12 @@
+libs = %w(tty-which tty-spinner rake)
+
+# Check for presence of required gems. 
+# If not present, install the gems
+libs.each do |gem|
+  begin
+    require gem
+  rescue LoadError
+    %x[gem install #{gem}]
+     Gem.clear_paths
+  end
+end
