@@ -1,4 +1,4 @@
-require 'ostruct'
+require "ostruct"
 
 die_face = OpenStruct.new(
   :face_1 => "\u2680",
@@ -6,10 +6,10 @@ die_face = OpenStruct.new(
   :face_3 => "\u2682",
   :face_4 => "\u2683",
   :face_5 => "\u2684",
-  :face_6 => "\u2685"
+  :face_6 => "\u2685",
 )
 
-dice  = []
+dice = []
 
 dice << die_face[:face_1]
 dice << die_face[:face_2]

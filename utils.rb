@@ -6,13 +6,11 @@
 ##=UTILS=##
 
 def chdir(dir)
+  puts Dir.pwd
 
-puts Dir.pwd
-
-Dir.chdir(dir) do
-puts Dir.pwd
-end
-
+  Dir.chdir(dir) do
+    puts Dir.pwd
+  end
 end
 
 #=> chdir("lib/")

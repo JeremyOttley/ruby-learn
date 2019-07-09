@@ -1,11 +1,9 @@
-# Splat Operator (*) 
+# Splat Operator (*)
 
 # When calling methods
 
 arguments = [1, 2, 3, 4]
 my_method(*arguments) # any number of arguments
-
-
 
 # or:
 
@@ -16,7 +14,6 @@ my_method(1, *arguments) # any number of trailing arguments
 
 arguments = [1, 2]
 my_method(*arguments, 3, 4) # any number of preceding arguments
-
 
 # or:
 
@@ -40,4 +37,4 @@ my_method(third: 3, **arguments)
 
 # Are equivalent to:
 
-my_method(first:1, second:2, third:3)
+my_method(first: 1, second: 2, third: 3)

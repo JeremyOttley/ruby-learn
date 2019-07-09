@@ -3,8 +3,11 @@
 
 require 'net/http'
 require 'open-uri'
+require 'tty-prompt'
 
-uri = URI.parse("https://ruby-doc.org")
+prompt = TTY::Prompt.new
+
+uri = URI.parse(prompt.ask("Please enter a valid uri: "))
 response = Net::HTTP.get_response(uri)
 
 def status(message)

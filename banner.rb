@@ -1,32 +1,25 @@
 #!/usr/bin/env ruby
 
 class ShowHelp
-
-def self.music
-print %Q{
+  def self.music
+    print %Q{
 (づ｡◕‿‿◕｡)づ 󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠​​​​​​​​​​♬♩♪·♫ 󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠󠀠​​​​​​​​​​♬♩♪·♫
 }
-end
+  end
 
   def self.wizard
-print %Q[
+    print %Q[
   ∩＾_＾)⊃━☆ﾟ.*・｡ﾟ
 ]
   end
-  
+
   def self.squee
-puts %Q{
+    puts %Q{
 ░ ∗ ◕ ں ◕ ∗ ░
 }
-end
-
+  end
 end
 
 ShowHelp::music
 ShowHelp::wizard
 ShowHelp::squee
-
-
-
-
-
