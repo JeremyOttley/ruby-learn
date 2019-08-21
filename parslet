@@ -1,0 +1,24 @@
+require 'parslet'
+
+class EmailParser < Parslet::Parser
+  rule(:space) { match('\s').repeat(1) }
+  rule(:space?) { space.maybe }
+  rule(:dash?) { match('_-') }
+
+  rule(:at) { str('@') | (dash? >> (str('at') |  str('AT')) >> dash?) }
+  rule(:dot) { str('.') | (dash? >> (str('dot') | str('DOT')) >> dash?) }
+
+  rule(:word) { match('[a-z0-90]').repeat(1).as(:word) >> space? }
+  rule(:separator) { dot.as(:dot) >> space? | space }
+  rule(:words) { word >> (separator >> word).repeat }
+
+  rule(:email) { (words.as(:usesrname) >> space? >> at >> space? >> words).as(:email) }
+
+  root :email
+end
+
+begin
+  EmailParser.new.parse(("jeremy.ottley@gmail.com"), reporter: Parslet::ErrorReporter::Deepest.new)
+rescue Parslet::ParseFailed => error
+  puts error.parse_failure_cause.ascii_tree
+end
