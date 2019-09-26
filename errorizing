@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'pastel'
+
+colorize = Pastel.new
+
+error = ->message{ raise colorize.red.bold(message) }
