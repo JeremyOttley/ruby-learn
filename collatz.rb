@@ -11,6 +11,9 @@ def print_collatz(n)
         end    
 
     end
+
+    print n
+
 end
 
 print_collatz(6) #=> 6 3 10 5 16 8 4 2 1
